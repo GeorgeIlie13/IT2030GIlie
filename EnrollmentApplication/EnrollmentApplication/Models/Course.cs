@@ -7,10 +7,9 @@ namespace EnrollmentApplication.Models
 {
     public class Course
     {
-        public virtual int CourseId { get; set; }
-        public virtual string CourseTitle { get; set; }
-        public virtual string CourseDescription { get; set; }
-        public virtual decimal CourseCredits { get; set; }
-
+        public virtual int CourseID { get; set; }
+        public virtual string Title { get; set; }
+        public virtual string DescriptionUrl { get; set; }
+        public virtual int Credits { get; set; }
     }
 }

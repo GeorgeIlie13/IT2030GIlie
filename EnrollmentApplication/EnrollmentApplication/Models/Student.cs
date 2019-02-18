@@ -7,9 +7,8 @@ namespace EnrollmentApplication.Models
 {
     public class Student
     {
-        public virtual int StudentId { get; set; }
-        public virtual string StudentLastName { get; set; }
-        public virtual string StudentFirstName { get; set; }
-
+        public virtual int StudentID { get; set; }
+        public virtual string FirstName { get; set; }
+        public virtual string LastName { get; set; }
     }
 }

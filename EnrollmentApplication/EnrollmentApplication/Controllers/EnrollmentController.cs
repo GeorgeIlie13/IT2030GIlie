@@ -39,8 +39,8 @@ namespace EnrollmentApplication.Controllers
         // GET: Enrollment/Create
         public ActionResult Create()
         {
-            ViewBag.CourseId = new SelectList(db.Courses, "CourseId", "CourseTitle");
-            ViewBag.StudentId = new SelectList(db.Students, "StudentId", "StudentLastName");
+            ViewBag.CourseID = new SelectList(db.Courses, "CourseID", "Title");
+            ViewBag.StudentID = new SelectList(db.Students, "StudentID", "FirstName");
             return View();
         }
 
@@ -49,7 +49,7 @@ namespace EnrollmentApplication.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EnrollmentId,StudentId,CourseId,Grade,StudentObject,CourseObject,EnrollmentArtUrl")] Enrollment enrollment)
+        public ActionResult Create([Bind(Include = "EnrollmentID,StudentID,CourseID,Grade,StudentObject,CourseObject,IsActive,AssignedCampus,EnrollmentSemester,EnrollmentYear")] Enrollment enrollment)
         {
             if (ModelState.IsValid)
             {
@@ -58,8 +58,8 @@ namespace EnrollmentApplication.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CourseId = new SelectList(db.Courses, "CourseId", "CourseTitle", enrollment.CourseId);
-            ViewBag.StudentId = new SelectList(db.Students, "StudentId", "StudentLastName", enrollment.StudentId);
+            ViewBag.CourseID = new SelectList(db.Courses, "CourseID", "Title", enrollment.CourseID);
+            ViewBag.StudentID = new SelectList(db.Students, "StudentID", "FirstName", enrollment.StudentID);
             return View(enrollment);
         }
 
@@ -75,8 +75,8 @@ namespace EnrollmentApplication.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.CourseId = new SelectList(db.Courses, "CourseId", "CourseTitle", enrollment.CourseId);
-            ViewBag.StudentId = new SelectList(db.Students, "StudentId", "StudentLastName", enrollment.StudentId);
+            ViewBag.CourseID = new SelectList(db.Courses, "CourseID", "Title", enrollment.CourseID);
+            ViewBag.StudentID = new SelectList(db.Students, "StudentID", "FirstName", enrollment.StudentID);
             return View(enrollment);
         }
 
@@ -85,7 +85,7 @@ namespace EnrollmentApplication.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EnrollmentId,StudentId,CourseId,Grade,StudentObject,CourseObject,EnrollmentArtUrl")] Enrollment enrollment)
+        public ActionResult Edit([Bind(Include = "EnrollmentID,StudentID,CourseID,Grade,StudentObject,CourseObject,IsActive,AssignedCampus,EnrollmentSemester,EnrollmentYear")] Enrollment enrollment)
         {
             if (ModelState.IsValid)
             {
@@ -93,8 +93,8 @@ namespace EnrollmentApplication.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CourseId = new SelectList(db.Courses, "CourseId", "CourseTitle", enrollment.CourseId);
-            ViewBag.StudentId = new SelectList(db.Students, "StudentId", "StudentLastName", enrollment.StudentId);
+            ViewBag.CourseID = new SelectList(db.Courses, "CourseID", "Title", enrollment.CourseID);
+            ViewBag.StudentID = new SelectList(db.Students, "StudentID", "FirstName", enrollment.StudentID);
             return View(enrollment);
         }
 

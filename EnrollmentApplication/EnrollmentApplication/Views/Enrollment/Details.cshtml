@@ -11,19 +11,19 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Course.CourseTitle)
+            @Html.DisplayNameFor(model => model.Course.Title)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Course.CourseTitle)
+            @Html.DisplayFor(model => model.Course.Title)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Student.StudentLastName)
+            @Html.DisplayNameFor(model => model.Student.FirstName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Student.StudentLastName)
+            @Html.DisplayFor(model => model.Student.FirstName)
         </dd>
 
         <dt>
@@ -35,32 +35,34 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.StudentObject)
+            @Html.DisplayNameFor(model => model.IsActive)
         </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.StudentObject)
+            @Html.DisplayFor(model => model.IsActive)
         </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.CourseObject)
+            @Html.DisplayNameFor(model => model.AssignedCampus)
         </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.CourseObject)
+            @Html.DisplayFor(model => model.AssignedCampus)
         </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.EnrollmentArtUrl)
+            @Html.DisplayNameFor(model => model.EnrollmentSemester)
         </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.EnrollmentArtUrl)
+            @Html.DisplayFor(model => model.EnrollmentSemester)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EnrollmentYear)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EnrollmentYear)
+        </dd>
+
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.EnrollmentId }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EnrollmentID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

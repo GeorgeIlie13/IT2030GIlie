@@ -26,7 +26,12 @@
         <th>
             @Html.DisplayNameFor(model => model.AlbumArtUrl)
         </th>
-        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.InStock)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CountryOfOrigin)
+        </th>
     </tr>
 
 @foreach (var item in Model) {
@@ -47,9 +52,15 @@
             @Html.DisplayFor(modelItem => item.AlbumArtUrl)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.AlbumId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.AlbumId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.AlbumId })
+            @Html.DisplayFor(modelItem => item.InStock)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CountryOfOrigin)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.AlbumId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.AlbumId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.AlbumId })
         </td>
     </tr>
 }
