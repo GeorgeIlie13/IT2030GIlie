@@ -132,14 +132,43 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\EnrollmentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902242205561_InitialCreate.cs" />
+    <Compile Include="Migrations\201902242205561_InitialCreate.Designer.cs">
+      <DependentUpon>201902242205561_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903031748528_Update1.cs" />
+    <Compile Include="Migrations\201903031748528_Update1.Designer.cs">
+      <DependentUpon>201903031748528_Update1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903031828037_Update2.cs" />
+    <Compile Include="Migrations\201903031828037_Update2.Designer.cs">
+      <DependentUpon>201903031828037_Update2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903031948469_Update3.cs" />
+    <Compile Include="Migrations\201903031948469_Update3.Designer.cs">
+      <DependentUpon>201903031948469_Update3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903032104469_Update4.cs" />
+    <Compile Include="Migrations\201903032104469_Update4.Designer.cs">
+      <DependentUpon>201903032104469_Update4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903040443115_Update5.cs" />
+    <Compile Include="Migrations\201903040443115_Update5.Designer.cs">
+      <DependentUpon>201903040443115_Update5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Enrollment.cs" />
     <Compile Include="Models\EnrollmentDB.cs" />
+    <Compile Include="Models\InvalidCharAttribute.cs" />
+    <Compile Include="Models\MinimumAgeAttribute.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -184,6 +213,16 @@
     <Content Include="Views\Enrollment\Details.cshtml" />
     <Content Include="Views\Enrollment\Edit.cshtml" />
     <Content Include="Views\Enrollment\Index.cshtml" />
+    <Content Include="Views\Student\Create.cshtml" />
+    <Content Include="Views\Student\Delete.cshtml" />
+    <Content Include="Views\Student\Details.cshtml" />
+    <Content Include="Views\Student\Edit.cshtml" />
+    <Content Include="Views\Student\Index.cshtml" />
+    <Content Include="Views\Courses\Create.cshtml" />
+    <Content Include="Views\Courses\Delete.cshtml" />
+    <Content Include="Views\Courses\Details.cshtml" />
+    <Content Include="Views\Courses\Edit.cshtml" />
+    <Content Include="Views\Courses\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -200,6 +239,26 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201902242205561_InitialCreate.resx">
+      <DependentUpon>201902242205561_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903031748528_Update1.resx">
+      <DependentUpon>201903031748528_Update1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903031828037_Update2.resx">
+      <DependentUpon>201903031828037_Update2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903031948469_Update3.resx">
+      <DependentUpon>201903031948469_Update3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903032104469_Update4.resx">
+      <DependentUpon>201903032104469_Update4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903040443115_Update5.resx">
+      <DependentUpon>201903040443115_Update5.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

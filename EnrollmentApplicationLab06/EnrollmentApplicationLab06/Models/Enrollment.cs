@@ -43,6 +43,8 @@ namespace EnrollmentApplicationLab06.Models
         [Range(2018, Int32.MaxValue, ErrorMessage = "Cannot be before 2018")]
         public virtual int EnrollmentYear { get; set; }
 
+        [InvalidChar("*", ErrorMessage = "Notes contains unacceptable characters!")]
+        public virtual string Notes { get; set; }
 
     }
 }

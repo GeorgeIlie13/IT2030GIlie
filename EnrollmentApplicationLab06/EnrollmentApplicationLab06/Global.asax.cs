@@ -15,8 +15,7 @@ namespace EnrollmentApplicationLab06
 
         protected void Application_Start()
         {
-            Database.SetInitializer<EnrollmentDB>(
-            new DropCreateDatabaseIfModelChanges<EnrollmentDB>());
+           // Database.SetInitializer<EnrollmentDB>(new DropCreateDatabaseIfModelChanges<EnrollmentDB>());
 
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

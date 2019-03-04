@@ -26,6 +26,9 @@
         <th>
             @Html.DisplayNameFor(model => model.CourseObject)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Notes)
+        </th>
         <th></th>
     </tr>
 
@@ -47,9 +50,12 @@
             @Html.DisplayFor(modelItem => item.CourseObject)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.EnrollmentId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.EnrollmentId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.EnrollmentId })
+            @Html.DisplayFor(modelItem => item.Notes)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.EnrollmentId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.EnrollmentId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.EnrollmentId })
         </td>
     </tr>
 }
