@@ -14,6 +14,42 @@ namespace EnrollmentApplicationLab06.Controllers
     {
         private EnrollmentDB db = new EnrollmentDB();
 
+        public ActionResult StudentSearch(string q)
+        {
+            var students = GetStudents(q);
+            if (students.Any())
+            {
+                return PartialView("_StudentSearch", students);
+            }
+            return PartialView("_NoResultsFound");
+        }
+
+        private List<Student> GetStudents(string searchString)
+        {
+            return db.Students
+                .Where(a => a.StudentFirstName.Contains(searchString) || a.StudentLastName.Contains(searchString))
+                .OrderBy(a => a.StudentLastName)
+                .ToList();
+        }
+
+        public ActionResult CourseSearch(string q)
+        {
+            var courses = GetCourses(q);
+            if (courses.Any())
+            {
+                return PartialView("_CourseSearch", courses);
+            }
+            return PartialView("_NoResultsFound");
+        }
+
+        private List<Course> GetCourses(string searchString)
+        {
+            return db.Courses
+                .Where(a => a.CourseTitle.Contains(searchString) || a.CourseDescription.Contains(searchString))
+                .OrderBy(a => a.CourseTitle)
+                .ToList();
+        }
+
         // GET: Enrollment
         public ActionResult Index()
         {
