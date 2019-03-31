@@ -1,0 +1,20 @@
+﻿
+@model IEnumerable<MVCMusicStoreApplication.Models.Album>
+
+@{
+    ViewBag.Title = "Index";
+}
+<br /><br />
+<h2>Here are the list of albums</h2>
+
+<list>
+    @foreach (var item in Model)
+
+    {
+        <li>@Html.ActionLink(item.Title, "Details", new { id = item.AlbumId })</li>
+    }
+</list>
+<br />
+<div>
+    @Html.ActionLink("Back to Browse", "Browse")
+</div>
