@@ -1,0 +1,45 @@
+﻿@model IEnumerable<EventApplication.Models.Event>
+
+<h4 class="last-heading">Last Minute Deals</h4>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.State)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td >
+            <a href="@Url.Action("Details", new {id = item.EventId } )">
+
+                @Html.DisplayFor(modelItem => item.Title)
+
+            </a>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.City)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.State)
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,11 @@
+﻿@model EventApplication.Models.ViewModels.CheckOutViewModel
+
+@{
+    ViewBag.Title = "CannotRegister";
+}
+
+<h2 class="page-heading">Registration Failed</h2>
+<div class="page-body">You cannot register for @Model.CheckOutEvent.Title @Model.Message</div>
+
+@Html.ActionLink("Return to Home", "Index", "Home", null, new { @class = "btn-primary btn"})
+

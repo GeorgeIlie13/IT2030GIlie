@@ -1,0 +1,25 @@
+﻿@model EventApplication.Models.ViewModels.CheckOutViewModel
+
+@{
+    ViewBag.Title = "Order Summary";
+}
+
+<h2>Order Summary</h2>
+<div class="order-summary">
+    <div class="order-summary-row">
+        @Html.LabelFor(model => model.OrderNumber)
+        @Html.DisplayFor(model => model.OrderNumber)
+    </div>
+    <div class="order-summary-row">
+        @Html.DisplayFor(model => model.CheckOutEvent.Title)
+    </div>
+    <div class="order-summary-row">
+        @Html.LabelFor(model => model.NumberOfTickets)
+        @Html.DisplayFor(model => model.NumberOfTickets)
+    </div>
+</div>
+
+<div class="bottom-btn">
+
+    @Html.ActionLink("Go to my Tickets", "Index", null, new { @class = "btn-primary btn" })
+</div>

@@ -1,0 +1,304 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+#navbar {
+    background-color: #004f94;
+}
+
+li > a {
+    color: white !important;
+}
+
+li > a:hover {
+
+    background-color: #428bca !important;
+}
+
+
+.navbar-brand {
+    color: white !important;
+}
+
+.navbar-brand:hover {
+
+    background-color: #428bca !important;
+}
+
+#site-logo {
+    display: inline-block;
+    width: 50px;
+    float: left;
+    margin-top: 5px;
+    margin-right: 15px;
+}
+
+
+#lastminute {
+    width: 40%;
+    display: inline-block;
+}
+
+    #lastminute > table > tbody > tr {
+        color: #004f94;
+    }
+
+#lastminute > table > tbody > tr > td > a {
+    background-color: gray;
+    padding: 7px 10px;
+    color: white;
+    border-radius: 4px;
+}
+
+#lastminute > table > tbody > tr > td > a:hover {
+    padding: 7px 10px;
+    color: white;
+
+}
+
+.last-heading{
+    
+    width: 38%;
+    color: white;
+    margin: 5px auto;
+
+}
+
+#mainsearch {
+    width: 55%;
+    margin-right: 25px;
+    margin-bottom: 20px;
+    display: inline-block;
+    float: left;
+    padding: 21px 0;
+    background-color: lightgray;
+    border-radius: 14px;
+}
+
+#deal {
+    width: 100%;
+}
+
+#search-title {
+    color: #004f94;
+    font-weight: bold;
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+#searchform {
+
+    width: 78%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 60px;
+
+}
+
+#searchresults {
+    
+    margin: 20px 0;
+    background-color: #eeeeee;
+    clear: both;
+
+}
+
+.event-details > dt{
+
+    margin: 0px 32px 5px 0;
+
+}
+
+    #searchresults > table > tbody > tr > th {
+        padding: 10px 20px !important;
+        background-color: #428bca;
+        color: white;
+    }
+
+.search-col {
+
+    padding: 20px !important;
+
+}
+
+
+
+.register-item {
+    margin: 20px 0;
+    width: 60%;
+}
+
+.register-info {
+    
+    display:inline-block;
+    width: 65%;
+    padding: 20px;
+
+
+}
+
+.register-tickets {
+    
+    display:inline-block;
+    width: 20%;
+
+}
+
+.bottom-btn {
+
+    width: 10%;
+    margin: auto auto;
+
+
+}
+
+
+.heading {
+    
+    margin: 10px auto;
+    font-size: 40px;
+    width: 40%;
+
+}
+
+.search-page-bar {
+    
+    margin: auto;
+    width: 40% !important;
+    display: block !important;
+    float: none !important;
+}
+
+.no-results {
+
+    font-weight: bold;
+    text-align: center;
+    padding: 20px 0;
+
+}
+
+.invalid {
+    color: #b94a48;
+}
+
+#update-message {
+
+    color: #004f94;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.order-table{
+
+    width: 100%;
+    margin-bottom: 20px;
+
+}
+
+.order-table > tbody > tr > th {
+
+    padding-left: 8px;
+
+}
+
+    .order-table > tbody > tr > td > a {
+        font-weight: bold;
+    }
+
+
+.ticket-order-col {
+
+    padding: 10px;
+}
+
+.Cancelled > a {
+
+    display: none;
+}
+
+.remove-details {
+
+    display:inline-block;
+
+}
+
+.RemoveLink, .RemoveButton {
+    background-color: #944141;
+    border-color: #944141;
+}
+
+.Processed {
+
+    width: 15%;
+}
+
+.inline {
+
+    display: inline-block;
+
+}
+
+.create-type{
+
+    margin-left: 10px;
+
+}
+
+.page-heading {
+
+    margin-top: 20px;
+    font-size: 28px;
+
+}
+
+.page-body{
+
+    margin: 20px 0;
+}
+
+
+#compass-img {
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left:auto;
+    height: 95px;
+    width: 95px;
+    display: block;
+}
+
+.small-compass-img{
+
+    height: 40px;
+    width: 40px;
+
+}
+
+.order-summary{
+
+    padding: 10px 0;
+
+}
+
+.order-summary-row{
+
+    margin: 10px 0;
+
+}

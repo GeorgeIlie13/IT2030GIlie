@@ -1,0 +1,51 @@
+﻿@model EventApplication.Models.ViewModels.OrderCartViewModel
+
+
+@{
+    ViewBag.Title = "Order Cart";
+}
+
+@section Scripts
+{
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/Apps/EventApplicationScript.js"></script>
+}
+<h2>Ticket Orders</h2>
+<br />
+<div id="update-message">
+    @Model.Message
+</div>
+<div>
+    <table class="order-table">
+        <tr>
+            <th>Title</th>
+            <th>Date Ordered</th>
+            <th>Number of tickets</th>
+            <th>Order Status</th>
+        </tr>
+
+        @foreach (var item in Model.OrderItems)
+        {
+        <tr id="record-@item.RecordId" class="ticket-order-row">
+            <td class="ticket-order-col"><a href="@Url.Action("OrderDetails", new { id = item.RecordId })">@item.EventSelected.Title</a></td>
+            <td class="ticket-order-col" id="date-ordered-@item.RecordId">@item.DateOrdered</td>
+            <td class="ticket-order-col" id="item-count-@item.RecordId">@item.NumberOfTickets</td>
+            <td class="ticket-order-col" id="status-@item.RecordId">@item.OrderStatus</td>
+            <td class="ticket-order-col @item.OrderStatus"><a href="#" class="RemoveLink btn-primary btn" data-id="@item.RecordId">Cancel Order</a></td>
+        </tr>
+        }
+
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+</div>
+<p class="button">
+    @Html.ActionLink("Back to Browse", "Index", "Home", null, new { @class = "btn btn-primary"})
+</p>
+
+
+
+

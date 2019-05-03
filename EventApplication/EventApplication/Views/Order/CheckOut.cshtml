@@ -1,0 +1,44 @@
+﻿@model EventApplication.Models.ViewModels.CheckOutViewModel
+
+@{
+    /**/
+
+    ViewBag.Title = "Register";
+}
+
+@section Scripts
+{
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+}
+
+@using (Html.BeginForm("AddToOrder", "Order", FormMethod.Get))
+{
+    <h2>Register</h2>
+    <div>
+        Sale ends on
+        @Html.DisplayFor(model => model.CheckOutEvent.StartDate)
+    </div>
+    <div class="register-item">
+        <div class="register-info">
+            @Html.DisplayFor(model => model.CheckOutEvent.Title)
+
+            <p>FREE</p>
+        </div>
+        <div class="register-tickets">
+            @Html.DisplayNameFor(model => model.NumberOfTickets)
+            <input type="hidden" name="id" value="@Model.CheckOutEvent.EventId" />
+            @Html.DropDownListFor(m => m.NumberOfTickets, Enumerable.Range(1, 10).Select(i => new SelectListItem { Text = i.ToString(), Value = i.ToString() }))
+
+        </div>
+
+    </div>
+
+    <div>
+        <input type="submit" class="btn-primary btn" value="Checkout"/>
+    </div>
+}
+
+
+

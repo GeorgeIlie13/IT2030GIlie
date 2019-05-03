@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Find Event";
+}
+
+<div>
+    <img src="~/Content/Images/compass.png" id="compass-img" />
+</div>
+<div class="heading">
+    Find an event near you!
+</div>
+
+
+<div class="search-page-bar">
+
+    @using (
+    Ajax.BeginForm("EventSearch", "Home",
+        new AjaxOptions
+        {
+            InsertionMode = InsertionMode.Replace, //replace element with the content that is returned
+    HttpMethod = "GET",
+            UpdateTargetId = "searchresults",
+            LoadingElementId = "ajax-loader",
+            OnFailure = "searchFailed",
+        }
+))
+    {
+        <input type="text" name="q" placeholder="Event or Event Type"/>
+        <input type="text" name="r" placeholder="Location, City, or State"/>
+        <input type="submit" value="search" class="btn-primary btn"/>
+        <img id="ajax-loader" src="@Url.Content("~/Images/ajax-loader.gif")" style="display:none" />
+
+
+    }
+
+
+</div>
+<div id="searchresults">
+
+
+</div>
+
+
+@section Scripts
+{
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+}

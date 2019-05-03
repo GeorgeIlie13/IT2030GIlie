@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+<div class="jumbotron" id="slideshow">
+    <div class="title-home">
+        <h1>Event Unlimited</h1>
+        <p class="lead">Find events near you. Never miss out again!</p>
+    </div>
+</div>
+<div class="main-box">
+    <div id="mainsearch">
+        <h4 id="search-title">Find an Event</h4>
+        <div id="searchform">
+
+            @using (
+    Ajax.BeginForm("EventSearch", "Home",
+    new AjaxOptions
+    {
+        InsertionMode = InsertionMode.Replace, //replace element with the content that is returned
+        HttpMethod = "GET",
+        UpdateTargetId = "searchresults",
+        LoadingElementId = "ajax-loader",
+        OnFailure = "searchFailed",
+    }
+    ))
+            {
+                <!--What is going to happen, search results: Form-->
+
+                <input type="text" name="q" placeholder="Event or Event Type" />
+                <input type="text" name="r" placeholder="Location, City, or State" />
+                <input type="submit" value="search" class="btn-primary btn" />
+                <img id="ajax-loader" class="small-compass-img" src="@Url.Content("~/Content/Images/compass.png")" style="display:none" />
+
+
+            }
+        </div>
+    </div>
+
+    <div id="lastminute">
+        @Ajax.ActionLink("Click here to see Last Minute Deals!",
+                                 "LastMinuteDeal", "Home",
+                                 null,
+                                 new AjaxOptions
+                                 {
+                                     UpdateTargetId = "lastminute",
+                                     InsertionMode = InsertionMode.Replace,
+                                     HttpMethod = "GET"
+                                 },
+                    new { @class = "btn btn-primary", id = "deal" })
+    </div>
+
+
+</div>
+   
+<div id="searchresults">
+</div>
+
+@section Scripts
+{
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+}
